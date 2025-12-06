@@ -20,25 +20,15 @@ export const Section = ({ children, className, id }: SectionProps) => {
 
 interface SectionHeaderProps {
   title: string;
-  subtitle?: string;
   className?: string;
 }
 
-export const SectionHeader = ({
-  title,
-  subtitle,
-  className,
-}: SectionHeaderProps) => {
+export const SectionHeader = ({ title, className }: SectionHeaderProps) => {
   return (
     <div className={cn("text-center mb-16", className)}>
       <h2 className="text-4xl md:text-5xl font-bold bg-primary bg-clip-text text-primary mb-4">
         {title}
       </h2>
-      {subtitle && (
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          {subtitle}
-        </p>
-      )}
     </div>
   );
 };

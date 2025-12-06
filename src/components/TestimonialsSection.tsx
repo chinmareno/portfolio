@@ -63,10 +63,7 @@ export const TestimonialsSection = () => {
 
   return (
     <Section id="testimonials">
-      <SectionHeader
-        title="Client Testimonials"
-        subtitle="What clients and colleagues say about working with me"
-      />
+      <SectionHeader title="Client Testimonials" />
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {testimonials.map((testimonial, index) => (

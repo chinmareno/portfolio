@@ -50,10 +50,7 @@ export const SkillsSection = () => {
 
   return (
     <Section id="skills" className="bg-muted-foreground/5">
-      <SectionHeader
-        title="Technical Skills"
-        subtitle="Technologies and tools I use to build exceptional applications"
-      />
+      <SectionHeader title="Technical Skills" />
 
       <div className="grid md:grid-cols-2 gap-8">
         {skillCategories.map((category, index) => (

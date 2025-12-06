@@ -28,10 +28,7 @@ const projects = [
 export const PortfolioSection = () => {
   return (
     <Section id="portfolio">
-      <SectionHeader
-        title="Featured Projects"
-        subtitle="Real-world applications that demonstrate my technical expertise and problem-solving abilities"
-      />
+      <SectionHeader title="Featured Projects" />
 
       <div className="space-y-12">
         {projects.map((project, index) => (

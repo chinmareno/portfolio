@@ -30,21 +30,14 @@ export const HeroSection = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const isShowAvatar = process.env.SHOW_AVATAR === "true";
+  console.log(isShowAvatar);
   return (
     <Section
       id="home"
       className="min-h-screen bg-blue-800/10 flex items-center justify-center relative"
     >
       <div className="text-center">
-        <Image
-          src="/myself.jpg"
-          alt="chinmareno - Full Stack Developer"
-          width={200}
-          height={200}
-          className="rounded-full aspect-square object-cover mb-8 mx-auto shadow-glow border-4 border-primary/20"
-          sizes="(max-width: 768px) 128px, (max-width: 1200px) 160px, 200px"
-        />
-
         <h1 className="text-5xl md:text-7xl font-bold mb-6 font-inter">
           <span className="bg-primary bg-clip-text text-transparent">
             Chin Mareno
@@ -56,13 +49,11 @@ export const HeroSection = () => {
         </h2>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-          I build web apps that work and scale. I enjoy creating with React and
-          Node.js, exploring new technologies, and turning ideas into real
-          solutions.
+          Currently building apps with Next.js, Remix, and React.
         </p>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
           <span className="font-semibold">Trilingual:</span> Indonesian,
-          English, and a bit of Chinese.
+          English, and Chinese.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">

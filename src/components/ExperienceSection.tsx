@@ -39,10 +39,7 @@ const experiences = [
 export const ExperienceSection = () => {
   return (
     <Section id="experience" className="bg-muted/5">
-      <SectionHeader
-        title="Experience & Projects"
-        subtitle="Bootcamp training, freelance work, and personal projects that showcase my growth as a developer"
-      />
+      <SectionHeader title="Experience & Projects" />
 
       <div className="relative">
         <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary transform md:-translate-x-px" />
@@ -50,7 +47,7 @@ export const ExperienceSection = () => {
         <div className="space-y-12">
           {experiences.map((exp, index) => (
             <div
-              key={`${exp.company}-${exp.period}`}
+              key={index}
               className={`relative flex items-center ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               } animate-fade-in`}

@@ -1,7 +1,16 @@
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Users, Zap, Target } from "lucide-react";
+import {
+  Code,
+  Users,
+  Zap,
+  Target,
+  Trophy,
+  Eye,
+  Shield,
+  Clock,
+} from "lucide-react";
 
 export const AboutSection = () => {
   const coreSkills = [
@@ -20,51 +29,46 @@ export const AboutSection = () => {
 
   const values = [
     {
-      icon: <Target className="w-6 h-6" />,
-      title: "Attention to Detail",
-      description:
-        "Focus on clean, maintainable code and user-friendly interfaces",
+      icon: <Clock className="w-6 h-6" />,
+      title: "Consistency",
+      description: "Once I set a goal, I stay committed until I achieve it.",
     },
     {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Timely Delivery",
+      icon: <Shield className="w-6 h-6" />,
+      title: "Integrity",
       description:
-        "Able to deliver projects efficiently without cutting corners",
+        "I follow through on commitments and take responsibility for my actions.",
     },
     {
-      icon: <Users className="w-6 h-6" />,
-      title: "Communication",
-      description: "Clear and transparent updates in team settings",
+      icon: <Eye className="w-6 h-6" />,
+      title: "Calm",
+      description:
+        "Stay logical and maintain fairness even in intense situations.",
     },
     {
-      icon: <Code className="w-6 h-6" />,
-      title: "Clean Code",
+      icon: <Trophy className="w-6 h-6" />,
+      title: "High Achiever",
       description:
-        "Write structured, scalable, and well-documented applications",
+        "Set ambitious goals and push to reach them with dedication and focus.",
     },
   ];
 
   return (
     <Section id="about">
-      <SectionHeader
-        title="About Me"
-        subtitle="Aspiring full-stack developer building modern, efficient web applications"
-      />
+      <SectionHeader title="About Me" />
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <p className="text-lg text-foreground leading-relaxed">
-            I’m a full-stack developer with experience building web applications
-            using modern JavaScript technologies. I enjoy creating intuitive
-            user interfaces, implementing robust backend solutions, and
-            continuously improving my skills to deliver quality solutions.
-          </p>
-
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            I’m eager to contribute to projects where I can leverage React,
-            Node.js, and PostgreSQL while learning new tools and frameworks. My
-            goal is to write clean, maintainable code and help teams ship
-            features efficiently.
+            I’m a full-stack web developer who plans database schemas, backend
+            architecture, and atomic frontend components before writing code. I
+            build fast, reliable applications using <strong>Next.js</strong>,
+            <strong> Remix</strong>, <strong>React</strong>, and have experience
+            with <strong>Express</strong> on personal projects. I also can speak
+            in <strong>Indonesian</strong>, <strong>English</strong>, and
+            conversational <strong>Mandarin</strong>. I’m continuously learning
+            system design and infrastructure to deliver scalable, maintainable
+            applications.
           </p>
 
           <div className="pt-4">
