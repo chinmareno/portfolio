@@ -1,16 +1,7 @@
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Code,
-  Users,
-  Zap,
-  Target,
-  Trophy,
-  Eye,
-  Shield,
-  Clock,
-} from "lucide-react";
+import { Trophy, Eye, Shield, Clock } from "lucide-react";
 
 export const AboutSection = () => {
   const coreSkills = [

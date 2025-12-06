@@ -77,10 +77,7 @@ export const ContactSection = () => {
 
   return (
     <Section id="contact" className="bg-muted/5">
-      <SectionHeader
-        title="Get In Touch"
-        subtitle="Ready to start your next project? Let's discuss how I can help bring your ideas to life"
-      />
+      <SectionHeader title="Get In Touch" />
 
       <div className="grid lg:grid-cols-2 gap-12">
         <Card className="p-8 bg-card border-border shadow-elegant">

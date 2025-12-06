@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { ArrowDown, Github, Linkedin, Instagram } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export const HeroSection = () => {
