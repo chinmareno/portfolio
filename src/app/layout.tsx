@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/myself.jpg",
+        url: "/favicon.png",
         width: 1200,
         height: 630,
         alt: "chinmareno's personal site",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title: "chinmareno | Software Engineer",
     description:
       "Fullstack JavaScript developer passionate about building modern web apps.",
-    images: ["/myself.jpg"],
+    images: ["/favicon.jpg"],
   },
   icons: {
     icon: "/favicon.png",

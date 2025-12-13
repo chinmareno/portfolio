@@ -5,7 +5,36 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
+type Project = {
+  title: string;
+  technologies: string[];
+  description: string;
+  image: string;
+  liveUrl: string;
+};
+
 const projects = [
+  {
+    title: "Xiao ERP – Simple & Efficient ERP for Small Businesses",
+    technologies: [
+      "React",
+      "Remix",
+      "tRPC",
+      "Tailwind",
+      "Shadcn",
+      "i18next",
+      "React Table",
+      "BetterAuth",
+      "PostgreSQL",
+    ],
+    description: `Xiao ERP was built for Chinese companies in Indonesia that needed something simple, practical, and bilingual. Most struggled with language barriers, oversized ERP systems full of features they didn't need, and confusing inventory processes. Since I could bridge both languages, I set out to create a system tailored to how they actually work.
+
+I designed a lightweight ERP that keeps everything clear and familiar, with full Chinese–Indonesian support and automatic IDR–CNY currency conversion. I built integrated modules for inventory, sales, and accounting, added multi-tenant access with invite links, and made sure stock updates happen automatically whenever purchases or sales occur.
+
+The result is a faster, more automated workflow where teams can confidently manage operations in the language they prefer, without the complexity of big ERP platforms.`,
+    image: "/xiao-erp.png",
+    liveUrl: "https://xiao-erp-landing.vercel.app",
+  },
   {
     title: "LESSEGOS – Streetwear E-commerce",
     technologies: [
@@ -16,14 +45,15 @@ const projects = [
       "Zustand",
       "Shadcn UI",
     ],
-    description: `
-      LESSEGOS is a fast-growing Indonesian streetwear brand, but they had no website to showcase their identity or products. I designed and built a platform that gives them a strong online presence.
-      The site highlights their brand story, a clean product catalog with filters & pagination, and a community-driven articles section. Users can also log in to save favorites with a wishlist feature.
-      The result is a modern, mobile-first experience that makes the brand feel premium, and accessible beyond marketplace platforms.`,
+    description: `LESSEGOS is a fast-growing Indonesian streetwear brand that lacked a proper online presence. Most of their audience could only interact with them through marketplaces, limiting brand identity and customer engagement.
+
+    I designed and built a platform tailored to showcase their story and products clearly, with a clean, mobile-first interface. The site features a product catalog with filters and pagination, a community-driven articles section, and a user login system that allows customers to save favorites with a wishlist.
+    
+    The result is a modern, engaging online experience that strengthens their brand identity, makes shopping seamless, and extends their reach beyond marketplace platforms.`,
     image: "/lessegos.jpg",
     liveUrl: "https://lessegos.vercel.app",
   },
-] as const;
+] as Project[];
 
 export const PortfolioSection = () => {
   return (
