@@ -1,22 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { ArrowDown, Github, Linkedin, Instagram } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const HeroSection = () => {
   const [isScrolledDown, setIsScrolledDown] = useState(false);
-
-  const scrollToPortfolio = () => {
-    document
-      .getElementById("portfolio")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,53 +44,6 @@ export const HeroSection = () => {
           English, and Chinese.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <Button
-            onClick={scrollToPortfolio}
-            className="bg-primary cursor-pointer hover:shadow-glow transition-all duration-300 px-8 py-6 text-lg font-semibold"
-          >
-            View Portfolio
-          </Button>
-          <Button
-            variant="outline"
-            onClick={scrollToContact}
-            className="cursor-pointer border-primary/30 hover:border-primary hover:shadow-elegant hover:bg-transparent hover:text-white px-8 py-6 text-lg"
-          >
-            Contact Me
-          </Button>
-        </div>
-
-        <div className="flex justify-center gap-6 mb-4">
-          <a
-            href="https://www.instagram.com/chinmareno"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af]"
-            aria-label="Instagram"
-          >
-            <Instagram className="w-6 h-6 text-white" />
-          </a>
-
-          <a
-            href="https://github.com/chinmareno"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-black"
-            aria-label="GitHub"
-          >
-            <Github className="w-6 h-6 text-white" />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/chin-mareno-792b80229/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-[#0077B5]"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-6 h-6 text-white" />
-          </a>
-        </div>
         {!isScrolledDown && (
           <ArrowDown className="animate-bounce w-6 h-6 text-muted-foreground mx-auto" />
         )}

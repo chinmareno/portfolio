@@ -14,8 +14,6 @@ export const Navigation = () => {
     { name: "Skills", href: "#skills" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Experience", href: "#experience" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
