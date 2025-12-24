@@ -28,10 +28,10 @@ export const SkillsSection = () => {
       skills: [
         "Node.js",
         "Express.js",
-        "RESTful APIs",
+        "NestJS",
+        "Prisma",
         "tRPC",
-        "JWT Authentication",
-        "Auth.js",
+        "JWT",
         "Better Auth",
         "UploadThing (file uploads)",
       ],
@@ -39,7 +39,7 @@ export const SkillsSection = () => {
     {
       icon: <Database className="w-8 h-8" />,
       title: "Database & Storage",
-      skills: ["PostgreSQL", "Prisma"],
+      skills: ["PostgreSQL", "MongoDB"],
     },
     {
       icon: <Settings className="w-8 h-8" />,
@@ -49,21 +49,26 @@ export const SkillsSection = () => {
   ];
 
   return (
-    <Section id="skills" className="bg-muted-foreground/5">
+    <Section className="min-h-[100vh] flex flex-col justify-center" id="skills">
       <SectionHeader title="Technical Skills" />
-
+      <p
+        className={`text-3xl md:text-4xl mb-2 font-bold text-black max-w-2xl leading-tight transition-all duration-700 `}
+        style={{ transitionDelay: "100ms" }}
+      >
+        Libraries/Frameworks
+      </p>
       <div className="grid md:grid-cols-2 gap-8">
         {skillCategories.map((category, index) => (
           <Card
             key={category.title}
-            className="p-8 bg-card border-border hover:shadow-elegant transition-all duration-500 hover:-translate-y-1 group animate-fade-in"
+            className="p-8 bg-white border-2 border-black transition-all duration-500 group animate-fade-in"
             style={{ animationDelay: `${index * 0.2}s` }}
           >
             <div className="flex items-center mb-6">
-              <div className="text-primary group-hover:text-primary transition-colors duration-300 mr-4">
+              <div className="text-black group-transition-colors duration-300 mr-4">
                 {category.icon}
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3 className="text-xl text-black font-semibold">
                 {category.title}
               </h3>
             </div>
@@ -73,7 +78,7 @@ export const SkillsSection = () => {
                 <Badge
                   key={skill}
                   variant="secondary"
-                  className="px-3 text-foreground py-1.5 text-sm bg-secondary/80 hover:bg-primary/20 transition-all duration-300 cursor-default hover:scale-105"
+                  className="px-3 py-1.5 text-sm bg-transparent border-2 text-black border-black transition-all duration-300 cursor-default"
                   style={{
                     animationDelay: `${index * 0.2 + skillIndex * 0.05}s`,
                     animation: "fade-in 0.6s ease-out forwards",

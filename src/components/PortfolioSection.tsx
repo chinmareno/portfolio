@@ -1,7 +1,8 @@
-import { Section, SectionHeader } from "@/components/ui/section";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
@@ -13,7 +14,7 @@ type Project = {
   liveUrl: string;
 };
 
-const projects = [
+const projects: Project[] = [
   {
     title: "Xiao ERP – Simple & Efficient ERP for Small Businesses",
     technologies: [
@@ -27,11 +28,8 @@ const projects = [
       "BetterAuth",
       "PostgreSQL",
     ],
-    description: `Xiao ERP was built for Chinese companies in Indonesia that needed something simple, practical, and bilingual. Most struggled with language barriers, oversized ERP systems full of features they didn't need, and confusing inventory processes. Since I could bridge both languages, I set out to create a system tailored to how they actually work.
-
-I designed a lightweight ERP that keeps everything clear and familiar, with full Chinese–Indonesian support and automatic IDR–CNY currency conversion. I built integrated modules for inventory, sales, and accounting, added multi-tenant access with invite links, and made sure stock updates happen automatically whenever purchases or sales occur.
-
-The result is a faster, more automated workflow where teams can confidently manage operations in the language they prefer, without the complexity of big ERP platforms.`,
+    description:
+      "Xiao ERP was designed for companies needing a simple, practical, bilingual system.",
     image: "/xiao-erp.png",
     liveUrl: "https://xiao-erp-landing.vercel.app",
   },
@@ -41,88 +39,132 @@ The result is a faster, more automated workflow where teams can confidently mana
       "Next.js",
       "React",
       "TailwindCSS",
-      "Backendless",
+      "NestJS",
       "Zustand",
       "Shadcn UI",
+      "MongoDB",
     ],
-    description: `LESSEGOS is a fast-growing Indonesian streetwear brand that lacked a proper online presence. Most of their audience could only interact with them through marketplaces, limiting brand identity and customer engagement.
-
-    I designed and built a platform tailored to showcase their story and products clearly, with a clean, mobile-first interface. The site features a product catalog with filters and pagination, a community-driven articles section, and a user login system that allows customers to save favorites with a wishlist.
-    
-    The result is a modern, engaging online experience that strengthens their brand identity, makes shopping seamless, and extends their reach beyond marketplace platforms.`,
+    description:
+      "LESSEGOS is a fast-growing Indonesian streetwear brand that lacked a proper online presence.",
     image: "/lessegos.jpg",
     liveUrl: "https://lessegos.vercel.app",
   },
-] as Project[];
+];
 
 export const PortfolioSection = () => {
-  return (
-    <Section id="portfolio">
-      <SectionHeader title="Featured Projects" />
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
-      <div className="space-y-12">
-        {projects.map((project, index) => (
-          <Card
-            key={project.title}
-            className="p-0 bg-card text-primary-foreground border-border hover:shadow-elegant transition-all duration-500 overflow-hidden animate-fade-in"
-            style={{ animationDelay: `${index * 0.2}s` }}
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      id="portfolio"
+      ref={sectionRef}
+      className="py-24 md:py-32 px-6 lg:px-12 mx-auto flex bg-slate-50/45"
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Section header */}
+        <div className="mb-16 md:mb-24">
+          <h2
+            className={`text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4 transition-all duration-700 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
           >
-            <div className="grid lg:grid-cols-2 gap-0">
-              <div className="relative overflow-hidden bg-white">
-                <div className="relative aspect-[1.8/2] max-h-fit">
+            Selected Work
+          </h2>
+          <p
+            className={`text-3xl md:text-4xl font-bold text-black max-w-2xl leading-tight transition-all duration-700 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "100ms" }}
+          >
+            Projects I’ve worked on
+          </p>
+        </div>
+
+        <div className="space-y-24 md:space-y-32">
+          {projects.map((project, index) => (
+            <div
+              key={project.title}
+              className={`grid md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-700 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${200 + index * 100}ms` }}
+            >
+              {/* Image */}
+              <div className="relative place-self-start group rounded-sm md:col-span-3 overflow-hidden border-2 mb-auto border-black p-[92px] shadow-lg">
+                <div className="aspect-[4/3] bg-muted">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 "
+                    className="object-cover w-full h-full transition-transform duration-700"
                   />
                 </div>
               </div>
-              <div className="p-8 lg:p-10">
+
+              {/* Content */}
+              <div
+                className={`${index % 2 === 1 ? "md:order-1" : ""} col-span-9`}
+              >
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <Badge
                       key={tech}
                       variant="secondary"
-                      className="px-3 py-1 text-xs bg-primary/10 text-primary border-primary/20"
+                      className="px-3 py-1 text-xs bg-transparent text-black border-2 border-black"
                     >
                       {tech}
                     </Badge>
                   ))}
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4 transition-colors">
+                <h3 className="text-2xl md:text-3xl font-semibold mb-4 leading-tight text-black">
                   {project.title}
                 </h3>
 
-                <div className="text-sm">
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                    {project.description}
-                  </p>
-                </div>
+                <p className="text-muted-foreground leading-relaxed mb-6 whitespace-pre-line">
+                  {project.description}
+                </p>
 
-                <div className="flex gap-4 mt-8">
-                  <Button
-                    variant="default"
-                    size="sm"
-                    className="bg-primary hover:shadow-glow transition-all duration-300"
-                    asChild
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="bg-black hover:opacity-80 hover:bg-black transition-all duration-300"
+                  asChild
+                >
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Project
-                    </a>
-                  </Button>
-                </div>
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Project
+                  </a>
+                </Button>
               </div>
             </div>
-          </Card>
-        ))}
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 };

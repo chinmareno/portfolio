@@ -51,13 +51,13 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection("#home")}
-              className="text-xl cursor-pointer font-bold text-primary hover:opacity-80 transition-opacity"
+              className="font-medium text-black cursor-pointer tracking-tight hover:opacity-70 transition-opacity"
             >
               Chin Mareno
             </button>
@@ -71,13 +71,13 @@ export const Navigation = () => {
                   onClick={() => scrollToSection(item.href)}
                   className={`px-3 cursor-pointer py-2 text-sm font-medium transition-all duration-300 relative group ${
                     activeSection === item.href.substring(1)
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-primary-foreground"
+                      ? "text-black"
+                      : "text-muted-foreground hover:text-black"
                   }`}
                 >
                   {item.name}
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-300 ${
+                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-black transform origin-left transition-transform duration-300 ${
                       activeSection === item.href.substring(1)
                         ? "scale-x-100"
                         : "scale-x-0 group-hover:scale-x-100"

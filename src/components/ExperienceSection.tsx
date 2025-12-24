@@ -9,7 +9,6 @@ const experiences = [
     company: "Purwadhika (Bootcamp)",
     location: "Remote",
     period: "2025",
-    type: "Training",
     responsibilities: [
       "Completed intensive full-stack curriculum focused on JavaScript, React, Next.js, and Node.js",
       "Built real-world projects including an e-commerce site, dashboard app, and developer portfolio",
@@ -24,7 +23,6 @@ const experiences = [
     company: "Purwadhika (Bootcamp)",
     location: "Remote",
     period: "2025",
-    type: "Project",
     responsibilities: [
       "Developed a full-stack e-commerce platform for an Indonesian streetwear brand as part of bootcamp capstone",
       "Implemented product catalog with filtering, pagination, and wishlist functionality",
@@ -42,7 +40,7 @@ export const ExperienceSection = () => {
       <SectionHeader title="Experience & Projects" />
 
       <div className="relative">
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary transform md:-translate-x-px" />
+        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-black transform md:-translate-x-px" />
 
         <div className="space-y-12">
           {experiences.map((exp, index) => (
@@ -53,33 +51,27 @@ export const ExperienceSection = () => {
               } animate-fade-in`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-2 md:-translate-x-2 z-10 animate-glow-pulse" />
+              <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-black rounded-full transform -translate-x-2 md:-translate-x-2 z-10 animate-glow-pulse" />
 
               <div
                 className={`w-full md:w-1/2 ${
                   index % 2 === 0 ? "md:pr-8" : "md:pl-8"
                 } ml-12 md:ml-0`}
               >
-                <Card className="p-6 bg-card border-border hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+                <Card className="p-6 bg-transparent border-2 border-black transition-all duration-300">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-foreground mb-1">
+                      <h3 className="text-xl font-bold text-black mb-1">
                         {exp.title}
                       </h3>
-                      <div className="flex items-center text-primary mb-2">
+                      <div className="flex items-center text-black mb-2">
                         <Building className="w-4 h-4 mr-2" />
                         <span className="font-semibold">{exp.company}</span>
                       </div>
                     </div>
-                    <Badge
-                      variant="secondary"
-                      className="self-start sm:self-center bg-primary/10 text-primary border-primary/20"
-                    >
-                      {exp.type}
-                    </Badge>
                   </div>
 
-                  <div className="flex items-center text-sm text-muted-foreground mb-4 gap-4">
+                  <div className="flex items-center text-sm text-black mb-4 gap-4">
                     <div className="flex items-center">
                       <Calendar className="w-4 h-4 mr-1" />
                       {exp.period}
@@ -96,7 +88,9 @@ export const ExperienceSection = () => {
                         key={idx}
                         className="text-sm text-muted-foreground flex items-start"
                       >
-                        <span className="text-primary mr-2 mt-1">•</span>
+                        <span className="text-black font-bold mr-2 mt-1">
+                          •
+                        </span>
                         <span className="leading-relaxed">
                           {responsibility}
                         </span>
@@ -109,7 +103,7 @@ export const ExperienceSection = () => {
                       <Badge
                         key={tech}
                         variant="secondary"
-                        className="px-2 py-1 text-xs bg-secondary/80 hover:bg-primary/20 text-foreground transition-colors"
+                        className="px-2 py-1 text-xs text-black bg-transparent border-2 border-black transition-colors"
                       >
                         {tech}
                       </Badge>

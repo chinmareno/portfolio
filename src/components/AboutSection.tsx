@@ -1,43 +1,24 @@
-import { Section, SectionHeader } from "@/components/ui/section";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Trophy, Eye, Shield, Clock } from "lucide-react";
-
 export const AboutSection = () => {
-  const coreSkills = [
-    "JavaScript (ES6+)",
-    "TypeScript",
-    "React",
-    "Next",
-    "Remix",
-    "Node",
-    "Express",
-    "PostgreSQL",
-    "Git",
-    "Tailwind CSS",
-    "REST",
-  ];
-
   const values = [
     {
-      icon: <Clock className="w-6 h-6" />,
+      icon: "⏰",
       title: "Consistency",
       description: "Once I set a goal, I stay committed until I achieve it.",
     },
     {
-      icon: <Shield className="w-6 h-6" />,
+      icon: "🛡️",
       title: "Integrity",
       description:
         "I follow through on commitments and take responsibility for my actions.",
     },
     {
-      icon: <Eye className="w-6 h-6" />,
+      icon: "👁️",
       title: "Calm",
       description:
         "Stay logical and maintain fairness even in intense situations.",
     },
     {
-      icon: <Trophy className="w-6 h-6" />,
+      icon: "🏆",
       title: "High Achiever",
       description:
         "Set ambitious goals and push to reach them with dedication and focus.",
@@ -45,57 +26,57 @@ export const AboutSection = () => {
   ];
 
   return (
-    <Section id="about">
-      <SectionHeader title="About Me" />
-
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-          <p className="text-lg text-foreground leading-relaxed">
-            I’m a full-stack web developer who plans database schemas, backend
-            architecture, and atomic frontend components before writing code. I
-            build fast, reliable applications using <strong>Next.js</strong>,
-            <strong> Remix</strong>, <strong>React</strong>, and have experience
-            with <strong>Express</strong> on personal projects. I also can speak
-            in <strong>Indonesian</strong>, <strong>English</strong>, and
-            conversational <strong>Mandarin</strong>. I’m continuously learning
-            system design and infrastructure to deliver scalable, maintainable
-            applications.
+    <section
+      id="about"
+      className="min-h-[100vh] flex items-center py-24 md:py-32 px-6 lg:px-12 bg-slate-50/45"
+    >
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24">
+        {/* Left column - Bio & Skills */}
+        <div>
+          <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">
+            About Me
+          </h2>
+          <h3
+            className="text-3xl text-black md:text-4xl font-bold mb-8 leading-tight transition-all duration-700"
+            style={{ transitionDelay: "100ms" }}
+          >
+            I’m a developer who believes fundamental still not overrated
+          </h3>
+          <p className="text-lg text-black leading-relaxed mb-4">
+            Hello! I’m Chin Mareno, a Full-stack Developer who tries to
+            understand the concept before writing code.
           </p>
-
-          <div className="pt-4">
-            <h3 className="text-xl font-semibold mb-4 text-primary">
-              Core Technologies
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {coreSkills.map((skill) => (
-                <Badge
-                  key={skill}
-                  variant="secondary"
-                  className="px-3 py-1 text-foreground text-sm bg-secondary hover:bg-primary/20 transition-colors"
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-          </div>
+          <p className="text-lg text-black leading-relaxed mb-4">
+            Over the past 3 years, I’ve built applications using{" "}
+            <strong>Next.js</strong>, <strong>Remix</strong>,{" "}
+            <strong>React</strong>, <strong>Express</strong>, and{" "}
+            <strong>NestJS</strong>.
+          </p>
+          <p className="text-lg text-black leading-relaxed mb-4">
+            I also able to speak fluent <strong>Indonesian</strong> and{" "}
+            <strong>English</strong>, conversational <strong>Mandarin</strong>,
+            while currently learning Japanese.
+          </p>
         </div>
 
+        {/* Right column - Values */}
         <div className="grid sm:grid-cols-2 gap-6">
-          {values.map((value, index) => (
-            <Card
+          {values.map((value) => (
+            <div
               key={value.title}
-              className="p-6 bg-card border-border hover:shadow-elegant transition-all duration-300 hover:-translate-y-2"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="p-6 bg-white border-2 border-black rounded-lg"
             >
-              <div className="text-primary">{value.icon}</div>
-              <h3 className="font-semibold text-foreground">{value.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <div className="text-muted-foreground font-bold text-2xl mb-2">
+                {value.icon}
+              </div>
+              <h3 className="font-semibold text-black mb-1">{value.title}</h3>
+              <p className="text-sm text-black leading-relaxed">
                 {value.description}
               </p>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
-    </Section>
+    </section>
   );
 };
