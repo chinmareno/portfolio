@@ -15,20 +15,16 @@ export default function Home() {
       <SkillsSection />
       <PortfolioSection />
       <ExperienceSection />
-      <footer className="bg-gray-100 border-t-2 border-black py-8">
-        <div className="max-w-7xl mx-auto  text-black border-2 border-black rounded-lg bg-white place-self-center">
+      <footer className="bg-zinc-100 border-t-4 border-black py-12">
+        <div className="place-self-center bg-white border-4 text-black border-black rounded-sm shadow-[4px_4px_0_0_#000]">
           <a
             href="https://github.com/chinmareno"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center group  hover:opacity-70 p-3  transition-all duration-300"
+            className="flex items-center gap-4 p-4 hover:opacity-70 transition-opacity"
           >
-            <div className=" transition-colors duration-300 mr-4">
-              <Github className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="font-semibold transition-colors">Github</h4>
-            </div>
+            <Github className="w-5 h-5" />
+            <h4 className="font-semibold">GitHub</h4>
           </a>
         </div>
       </footer>

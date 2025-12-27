@@ -1,7 +1,7 @@
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Building } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 const experiences = [
   {
@@ -16,7 +16,7 @@ const experiences = [
       "Implemented authentication, REST APIs, and database integration",
       "Deployed projects to Vercel and practiced CI/CD workflows",
     ],
-    technologies: ["Next.js", "React", "Node.js", "Backendless", "TailwindCSS"],
+    technologies: ["Next.js", "React", "Node.js", "Express.js", "TailwindCSS"],
   },
   {
     title: "Portfolio Project – LESSEGOS Streetwear",
@@ -30,7 +30,7 @@ const experiences = [
       "Integrated Backendless for database, authentication, and APIs",
       "Deployed on Vercel with a mobile-first, responsive design",
     ],
-    technologies: ["Next.js", "TailwindCSS", "Backendless"],
+    technologies: ["Next.js", "TailwindCSS", "NestJS"],
   },
 ];
 
@@ -58,27 +58,19 @@ export const ExperienceSection = () => {
                   index % 2 === 0 ? "md:pr-8" : "md:pl-8"
                 } ml-12 md:ml-0`}
               >
-                <Card className="p-6 bg-transparent border-2 border-black transition-all duration-300">
+                <Card className="p-6 bg-transparent border-4 border-black transition-all duration-300">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-black mb-1">
                         {exp.title}
                       </h3>
-                      <div className="flex items-center text-black mb-2">
-                        <Building className="w-4 h-4 mr-2" />
+                      <div className="flex items-center gap-2 text-black ">
                         <span className="font-semibold">{exp.company}</span>
+                        <div className="flex items-center">
+                          <Calendar className="w-4 h-4 mr-1" />
+                          {exp.period}
+                        </div>
                       </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center text-sm text-black mb-4 gap-4">
-                    <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {exp.period}
-                    </div>
-                    <div className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-1" />
-                      {exp.location}
                     </div>
                   </div>
 

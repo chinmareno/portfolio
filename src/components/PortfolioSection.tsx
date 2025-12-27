@@ -72,7 +72,7 @@ export const PortfolioSection = () => {
     <section
       id="portfolio"
       ref={sectionRef}
-      className="py-24 md:py-32 px-6 lg:px-12 mx-auto flex bg-slate-50/45"
+      className="py-24 md:py-32 px-6 lg:px-12 mx-auto flex bg-[#F8F6F1]"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
@@ -111,12 +111,12 @@ export const PortfolioSection = () => {
             >
               {/* Image */}
               <div className="relative place-self-start group rounded-sm md:col-span-3 overflow-hidden border-2 mb-auto border-black p-[92px] shadow-lg">
-                <div className="aspect-[4/3] bg-muted">
+                <div className="aspect-[4/3]">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover w-full h-full transition-transform duration-700"
+                    className="object-cover w-full h-full p-2 bg-white transition-transform duration-700"
                   />
                 </div>
               </div>
