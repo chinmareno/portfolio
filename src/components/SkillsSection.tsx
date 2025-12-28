@@ -28,7 +28,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 
 export const SkillsSection = () => {
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
