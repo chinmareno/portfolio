@@ -72,11 +72,11 @@ export const PortfolioSection = () => {
     <section
       id="portfolio"
       ref={sectionRef}
-      className="py-24 md:py-32 px-6 lg:px-12 mx-auto flex bg-[#F8F6F1]"
+      className="py-16 md:py-32 px-4 sm:px-6 lg:px-12 mx-auto flex bg-[#F8F6F1]"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Section header */}
-        <div className="mb-16 md:mb-24">
+        <div className="mb-12 md:mb-24">
           <h2
             className={`text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4 transition-all duration-700 ${
               isVisible
@@ -98,11 +98,11 @@ export const PortfolioSection = () => {
           </p>
         </div>
 
-        <div className="space-y-24 md:space-y-32">
+        <div className="space-y-16 md:space-y-32">
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`grid md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-700 ${
+              className={`grid gap-8 md:grid-cols-12 md:gap-16 items-center transition-all duration-700 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -110,13 +110,13 @@ export const PortfolioSection = () => {
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               {/* Image */}
-              <div className="relative place-self-start group rounded-sm md:col-span-3 overflow-hidden border-2 mb-auto border-black p-[92px] shadow-lg">
+              <div className="relative hidden sm:block group rounded-sm col-span-12 md:col-span-3 overflow-hidden border-2 border-black shadow-lg p-2 md:p-20">
                 <div className="aspect-[4/3]">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover w-full h-full p-2 bg-white transition-transform duration-700"
+                    className="object-cover w-full h-full transition-transform duration-700"
                   />
                 </div>
               </div>
@@ -130,7 +130,7 @@ export const PortfolioSection = () => {
                     <Badge
                       key={tech}
                       variant="secondary"
-                      className="px-3 py-1 text-xs bg-transparent text-black border-2 border-black"
+                      className="px-2 py-1 text-xs bg-transparent text-black border-2 border-black"
                     >
                       {tech}
                     </Badge>

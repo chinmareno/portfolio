@@ -26,7 +26,7 @@ export const AboutSection = () => {
   return (
     <section
       id="about"
-      className="min-h-[100vh] flex items-center py-24 md:py-32 px-6 lg:px-12 bg-[#F8F6F1]"
+      className="w-full flex items-center py-24 md:py-32  -6 lg:px-12 bg-[#F8F6F1]"
     >
       <div
         ref={sectionRef}

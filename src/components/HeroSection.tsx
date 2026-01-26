@@ -38,7 +38,7 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className={`min-h-[100vh] flex items-center justify-center pt-32 pb-20 px-6 lg:px-12 transition-all duration-[1500ms] 
+      className={`w-full flex items-center justify-center pt-32 pb-20 px-6 lg:px-12 transition-all duration-[1500ms] 
       ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
     >
       <div className="max-w-5xl mx-auto text-center">

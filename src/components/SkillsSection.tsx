@@ -118,7 +118,7 @@ export const SkillsSection = () => {
   ];
 
   return (
-    <Section id="skills" className="min-h-[100vh] flex flex-col justify-center">
+    <Section id="skills" className="w-full flex flex-col justify-center">
       <div
         className={`
     transition-all duration-700

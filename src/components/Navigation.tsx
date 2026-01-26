@@ -93,7 +93,7 @@ export const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-primary-foreground hover:text-primary"
+              className="text-black hover:opacity-70"
             >
               {isMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -106,16 +106,16 @@ export const Navigation = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-300 ${
+                className={`block w-full text-left px-3 py-2 text-base font-medium transition-all duration-300 ${
                   activeSection === item.href.substring(1)
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    ? "text-black"
+                    : "text-muted-foreground hover:text-black"
                 }`}
               >
                 {item.name}
